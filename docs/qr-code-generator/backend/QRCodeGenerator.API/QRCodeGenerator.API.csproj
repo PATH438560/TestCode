@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>QRCodeGenerator.API</RootNamespace>
     <AssemblyName>QRCodeGenerator.API</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -15,8 +15,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\QRCodeGenerator.sln" />
-  </ItemGroup>
+
 
 </Project>

@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/QRCodeGenerator.API.csproj": {}
+  },
+  "projects": {
+    "/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/QRCodeGenerator.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/QRCodeGenerator.API.csproj",
+        "projectName": "QRCodeGenerator.API",
+        "projectPath": "/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/QRCodeGenerator.API.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
