@@ -11,8 +11,7 @@ namespace QRCodeGenerator.API.Validators
                 .NotEmpty().WithMessage("URL is required.")
                 .Must(BeAValidUrl).WithMessage("Invalid URL format.");
 
-            RuleFor(request => request.Options)
-                .NotNull().WithMessage("Options are required.");
+            // Options are optional, no validation needed
         }
 
         private bool BeAValidUrl(string url)

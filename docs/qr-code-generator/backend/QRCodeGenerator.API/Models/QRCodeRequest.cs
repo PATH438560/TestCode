@@ -2,8 +2,8 @@ namespace QRCodeGenerator.API.Models
 {
     public class QRCodeRequest
     {
-        public string Url { get; set; }
-        public QRCodeOptions Options { get; set; }
+        public string Url { get; set; } = string.Empty;
+        public QRCodeOptions? Options { get; set; }
     }
 
     public class QRCodeOptions

@@ -19,16 +19,9 @@ namespace QRCodeGenerator.API.Controllers
         [HttpPost("generate")]
         public async Task<IActionResult> GenerateQRCodeAsync([FromBody] QRCodeRequest request)
         {
-            if (request == null || string.IsNullOrEmpty(request.Url))
-            {
-                return BadRequest(new ErrorResponse
-                {
-                    StatusCode = 400,
-                    Message = "Invalid request",
-                    Details = new[] { "URL is required." }
-                });
-            }
-
+            // Validation is now handled by FluentValidation automatically
+            // No need for manual validation checks
+            
             var response = await _qrCodeService.GenerateQRCodeAsync(request);
             if (response.Success)
             {
@@ -39,7 +32,7 @@ namespace QRCodeGenerator.API.Controllers
             {
                 StatusCode = 400,
                 Message = "Error generating QR code",
-                Details = response.ErrorDetails
+                Details = response.ErrorDetails ?? new List<string>()
             });
         }
 

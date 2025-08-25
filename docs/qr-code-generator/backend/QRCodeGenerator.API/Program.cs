@@ -4,6 +4,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+using QRCodeGenerator.API.Services.Interfaces;
+using QRCodeGenerator.API.Services;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using QRCodeGenerator.API.Validators;
+using QRCodeGenerator.API.Models;
 
 public class Program
 {
@@ -13,8 +19,12 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllers();
-        builder.Services.AddScoped<Services.Interfaces.IQRCodeService, Services.QRCodeService>();
-        builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Validators.QRCodeRequestValidator>());
+        builder.Services.AddScoped<IQRCodeService, QRCodeService>();
+        
+        // Add FluentValidation
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddFluentValidationClientsideAdapters();
+        builder.Services.AddScoped<IValidator<QRCodeRequest>, QRCodeRequestValidator>();
         
         // Configure Swagger
         builder.Services.AddEndpointsApiExplorer();

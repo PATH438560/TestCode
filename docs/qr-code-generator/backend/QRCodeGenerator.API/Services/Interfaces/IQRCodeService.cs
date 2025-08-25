@@ -1,3 +1,5 @@
+using QRCodeGenerator.API.Models;
+
 namespace QRCodeGenerator.API.Services.Interfaces
 {
     public interface IQRCodeService

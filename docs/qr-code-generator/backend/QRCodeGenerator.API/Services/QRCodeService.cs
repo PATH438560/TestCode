@@ -29,15 +29,16 @@ namespace QRCodeGenerator.API.Services
                     {
                         Success = false,
                         QRCodeImage = null,
-                        Format = null
+                        Format = null,
+                        ErrorDetails = new List<string> { "Invalid URL format" }
                     };
                 }
 
                 // Generate QR code
-                using (var qrGenerator = new QRCodeGenerator())
+                using (var qrGenerator = new QRCoder.QRCodeGenerator())
                 {
-                    var qrCodeData = qrGenerator.CreateQrCode(request.Url, QRCodeGenerator.ECCLevel.Q);
-                    using (var qrCode = new PngByteQRCode(qrCodeData))
+                    var qrCodeData = qrGenerator.CreateQrCode(request.Url, QRCoder.QRCodeGenerator.ECCLevel.Q);
+                    using (var qrCode = new QRCoder.PngByteQRCode(qrCodeData))
                     {
                         byte[] qrCodeImage = await Task.Run(() => qrCode.GetGraphic(20));
                         string base64Image = Convert.ToBase64String(qrCodeImage);
@@ -58,7 +59,8 @@ namespace QRCodeGenerator.API.Services
                 {
                     Success = false,
                     QRCodeImage = null,
-                    Format = null
+                    Format = null,
+                    ErrorDetails = new List<string> { ex.Message }
                 };
             }
         }
