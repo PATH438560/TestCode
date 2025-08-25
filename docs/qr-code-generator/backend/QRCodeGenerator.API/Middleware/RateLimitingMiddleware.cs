@@ -17,11 +17,12 @@ namespace QRCodeGenerator.API.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
-            var clientIp = context.Connection.RemoteIpAddress.ToString();
+            var clientIp = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
             var currentTime = DateTime.UtcNow;
 
             var rateLimitInfo = _clients.GetOrAdd(clientIp, new RateLimitInfo());
 
+            bool shouldBlock = false;
             lock (rateLimitInfo)
             {
                 if (currentTime - rateLimitInfo.Timestamp > TimeSpan.FromMinutes(1))
@@ -34,10 +35,15 @@ namespace QRCodeGenerator.API.Middleware
 
                 if (rateLimitInfo.RequestCount > MAX_REQUESTS_PER_MINUTE)
                 {
-                    context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
-                    await context.Response.WriteAsync("Too many requests. Please try again later.");
-                    return;
+                    shouldBlock = true;
                 }
+            }
+
+            if (shouldBlock)
+            {
+                context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+                await context.Response.WriteAsync("Too many requests. Please try again later.");
+                return;
             }
 
             await _next(context);

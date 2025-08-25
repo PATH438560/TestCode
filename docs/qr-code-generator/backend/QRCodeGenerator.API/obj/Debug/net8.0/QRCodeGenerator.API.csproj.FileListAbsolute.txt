@@ -1,8 +1,0 @@
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.csproj.AssemblyReference.cache
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.GeneratedMSBuildEditorConfig.editorconfig
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.AssemblyInfoInputs.cache
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.AssemblyInfo.cs
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.csproj.CoreCompileInputs.cache
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.MvcApplicationPartsAssemblyInfo.cs
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.MvcApplicationPartsAssemblyInfo.cache
-/home/runner/work/TestCode/TestCode/docs/qr-code-generator/backend/QRCodeGenerator.API/obj/Debug/net8.0/QRCodeGenerator.API.sourcelink.json
